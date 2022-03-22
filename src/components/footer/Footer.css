@@ -1,0 +1,63 @@
+footer {
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-family: "Orbitron";
+  font-size: 14px;
+  word-spacing: 5px;
+  color: #ffffff;
+  background-color: #000000;
+  text-align: center;
+}
+
+.Hello {
+  padding-top: 10px;
+}
+
+.SosmedIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SosmedIcon a {
+  margin: 0 20px;
+  margin-bottom: 10px;
+}
+
+.SosmedIcon a i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.SosmedIcon a i:hover {
+  color: #03dbf3;
+  text-shadow: 0 1.5px 1.5px #03dbf3;
+}
+
+.Email {
+  margin: 0 0;
+  padding-bottom: 10px;
+}
+
+.AlamatEmail {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: large;
+  color: #03dbf3;
+}
+
+@media (max-width: 800px) {
+  footer {
+    font-size: 10px;
+  }
+
+  .SosmedIcon a {
+    margin: 0 10px;
+    margin-bottom: 10px;
+  }
+
+  .SosmedIcon a i {
+    font-size: 30px;
+  }
+}

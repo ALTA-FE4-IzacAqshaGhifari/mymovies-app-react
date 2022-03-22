@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: #000000;
+  height: 90px;
+  width: 100%;
+  font-family: "Orbitron";
+  font-size: 15px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0px 2px 2px #03dbf3;
+}
+
+.H1Navbar {
+  color: #fff;
+  text-shadow: 2px 2px #03dbf3;
+  font-size: 35px;
+  padding: 0px 0px;
+  padding-left: 13vw;
+  margin-top: 22.5px;
+  float: left;
+}
+
+.H1Navbar i {
+  color: #03dbf3;
+  text-shadow: none;
+}
+
+nav ul {
+  float: right;
+  margin-right: 13vw;
+  padding-left: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 22.5px 10px;
+  list-style: none;
+}
+
+.navListEffek {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 5px;
+}
+
+.navListEffek:hover {
+  background: #ffffff;
+  color: #000000;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 40px;
+  float: right;
+  line-height: 70px;
+  margin-right: 8vw;
+  margin-top: 15px;
+  cursor: pointer;
+  display: none;
+}
+
+.buttonFavorite {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Orbitron";
+  font-weight: bold;
+  font-size: 15px;
+  width: 130px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonFavorite:hover {
+  background-color: #03dbf3;
+  color: #ffffff;
+  border-color: #03dbf3;
+  box-shadow: 0px 3px 6px #03dbf3;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 1005px) {
+  .checkbtn {
+    display: block;
+  }
+
+  nav {
+    font-size: 2vh;
+  }
+
+  nav .H1Navbar {
+    font-size: 25px;
+    margin-top: 30px;
+    padding-left: 8vw;
+  }
+
+  .ulNavbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background: rgb(60, 60, 60);
+    top: 90px;
+    left: -100%;
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 90px;
+  }
+
+  .ulNavbar li {
+    display: block;
+    margin: 0 0;
+    /* line-height: 50px;
+    height: 50px; */
+  }
+
+  .ulNavbar li a {
+    padding: 10px 45px;
+  }
+
+  .logoNavbar {
+    padding-left: 15vw;
+  }
+
+  nav ul {
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  nav ul li {
+    display: inline-block;
+    margin: 0 0;
+    padding: 0 5px;
+    border-radius: 5px;
+  }
+
+  .buttonFavorite {
+    height: 50px;
+  }
+
+  #check:checked ~ .ulNavbar {
+    left: 0;
+  }
+}
+
+@media (max-width: 330px) {
+  nav .H1Navbar i {
+    font-size: 0px;
+  }
+}
