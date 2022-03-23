@@ -14,11 +14,11 @@ export default class MoviesCard extends Component {
           <div
             className="imageMovie"
             style={{
-              backgroundImage:
-                "url(https://c4.wallpaperflare.com/wallpaper/317/900/851/action-drama-2017-4k-wallpaper-preview.jpg)",
+              backgroundImage: `url(${this.props.image})`,
             }}
           ></div>
-          <p className="movieTitle">Dunkirk</p>
+          <div className="OverFlowHandler movieTitle">{this.props.title}</div>
+
           <Link
             to={this.props.link}
             style={{ color: "inherit", textDecoration: "inherit" }}
