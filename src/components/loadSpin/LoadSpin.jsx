@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "./LoadSpin.css";
 
-export default class LoadSpin extends Component {
-  render() {
-    return (
-      <div className="spinnerScreen">
-        <div className="spinner">
-          <div className="innerSpinner">Loading</div>
-        </div>
+export default function LoadSpin() {
+  return (
+    <div className="spinnerScreen">
+      <div className="spinner">
+        <div className="innerSpinner">Loading</div>
       </div>
-    );
-  }
+    </div>
+  );
 }

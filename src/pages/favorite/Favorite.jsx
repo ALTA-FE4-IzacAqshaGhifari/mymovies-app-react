@@ -1,10 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Favorite extends Component {
-  constructor(props) {
-    super();
-  }
-  render() {
-    return <div>Favorite</div>;
-  }
+export default function Favorite() {
+  return <div>Favorite</div>;
 }

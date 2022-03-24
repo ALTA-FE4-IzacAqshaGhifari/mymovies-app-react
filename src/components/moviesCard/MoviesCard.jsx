@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./MoviesCard.css";
 
 import { Link } from "react-router-dom";
+// import { withRouter } from "../../utils/navigation";
 
 export default class MoviesCard extends Component {
   constructor(props) {
