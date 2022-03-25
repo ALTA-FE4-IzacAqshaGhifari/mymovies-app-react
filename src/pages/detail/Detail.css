@@ -18,6 +18,10 @@
   flex-wrap: wrap;
 }
 
+.containerPoster {
+  color: #ffffff;
+}
+
 .posterDetail {
   width: 20vw;
   min-width: 250px;
@@ -57,7 +61,7 @@
   font-family: "Orbitron";
   font-size: 0.8rem;
   border-radius: 10px;
-  margin: auto 5px;
+  margin: 5px 5px;
   padding: 5px 5px;
   border: 1px solid #ffffff;
 }

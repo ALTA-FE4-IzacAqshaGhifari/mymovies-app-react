@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import LoadSpin from "../../components/loadSpin/LoadSpin";
 import Introduction from "../../components/introduction/Introduction";
 import "./Detail.css";
+import VideoCard from "../../components/videoCard/VideoCard";
 
 const Detail = () => {
   let params = useParams();
@@ -31,7 +32,7 @@ const Detail = () => {
         setVideos(response.data.videos.results);
         console.log(response.data);
         console.log(response.data.genres);
-        console.log(response.data.videos);
+        console.log(response.data.videos.results);
       })
       .catch((err) => {
         console.log("error");
@@ -69,7 +70,7 @@ const Detail = () => {
               <div className="ratingBintang">
                 <h2>
                   <i className="fa-solid fa-star"></i>{" "}
-                  {detail.vote_average ? detail.vote_average / 2 : "-"} / 5
+                  {detail.vote_average ? detail.vote_average : "-"} / 10
                 </h2>
               </div>
               <div className="containerGenre">
@@ -87,12 +88,7 @@ const Detail = () => {
           </div>
         </div>
         <Introduction text="Movies TRAILERS!!" />
-        <iframe
-          src={`https://www.youtube.com/embed/${videos[0].key}`}
-          width="70%"
-          height="800px"
-          title="video"
-        ></iframe>
+        <VideoCard videos={videos} />
       </div>
     );
   } else {
