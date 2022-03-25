@@ -13,7 +13,7 @@ export const readParams = (Component) => {
   const Wrapper = (props) => {
     const params = useParams();
 
-    return <Component {...props} navigate={params} />;
+    return <Component {...props} params={params} />;
   };
   return Wrapper;
 };

@@ -1,9 +1,6 @@
 import React from "react";
 import "./MoviesCard.css";
 
-import { Link } from "react-router-dom";
-// import { withRouter } from "../../utils/navigation";
-
 export default function MoviesCard(props) {
   return (
     <div className="kartuMovie">
@@ -16,12 +13,9 @@ export default function MoviesCard(props) {
         ></div>
         <div className="OverFlowHandler movieTitle">{props.title}</div>
 
-        <Link
-          to={props.link}
-          style={{ color: "inherit", textDecoration: "inherit" }}
-        >
-          <div className="btn btn-primary DetailButton">Detail</div>
-        </Link>
+        <div className="btn btn-primary DetailButton" onClick={props.onClick}>
+          Detail
+        </div>
       </div>
     </div>
   );

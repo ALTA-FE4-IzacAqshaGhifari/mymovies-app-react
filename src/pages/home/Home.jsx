@@ -9,7 +9,7 @@ import HomeCard from "../../components/homeCard/HomeCard";
 export default function Home() {
   return (
     <div className="HomeBackground">
-      <Introduction />
+      <Introduction text="Movies List, Movies details, and Your Favorite List!!" />
       <div className="ContainerIsi">
         <Title titleText={"Featured Today"} />
         <Slider />
