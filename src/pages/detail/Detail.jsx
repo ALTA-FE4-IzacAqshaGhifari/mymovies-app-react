@@ -30,9 +30,6 @@ const Detail = () => {
         setDetail(response.data);
         setGenres(response.data.genres);
         setVideos(response.data.videos.results);
-        console.log(response.data);
-        console.log(response.data.genres);
-        console.log(response.data.videos.results);
       })
       .catch((err) => {
         console.log("error");
@@ -66,11 +63,11 @@ const Detail = () => {
               }}
             ></div>
             <div className="isiDetail">
-              <h1 className="detailTitle">{detail.original_title}</h1>
+              <h1 className="detailTitle">{detail.title}</h1>
               <div className="ratingBintang">
                 <h2>
                   <i className="fa-solid fa-star"></i>{" "}
-                  {detail.vote_average ? detail.vote_average : "-"} / 10
+                  {detail.vote_average ? detail.vote_average / 2 : "-"} / 5
                 </h2>
               </div>
               <div className="containerGenre">

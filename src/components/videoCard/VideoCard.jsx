@@ -4,7 +4,7 @@ import "./VideoCard.css";
 
 export default function VideoCard(props) {
   let videoCollection = props.videos;
-  console.log(videoCollection);
+
   return (
     <div className="carouselContainer">
       <Carousel className="carouselDetail" interval={null}>

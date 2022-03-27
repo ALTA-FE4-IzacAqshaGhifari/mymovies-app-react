@@ -5,3 +5,10 @@
   text-shadow: 2px 2px #ffffff;
   margin: 40px 0;
 }
+
+@media (max-width: 1000px) {
+  .TitleStyle {
+    font-size: 20px;
+    margin: 25px 0;
+  }
+}

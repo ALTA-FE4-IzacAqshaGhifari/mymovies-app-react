@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import "./MoviesList.css";
 import MoviesCard from "../../components/moviesCard/MoviesCard";
 import LoadSpin from "../../components/loadSpin/LoadSpin";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const MoviesList = () => {
   const navigate = useNavigate();
@@ -50,37 +50,39 @@ const MoviesList = () => {
   if (isReady) {
     result = (
       <>
-        <div className="listContent">
-          {movies.map((item) => {
-            return (
-              <div key={item.id}>
-                <MoviesCard
-                  title={item.title}
-                  image={
-                    item.poster_path
-                      ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
-                      : `https://via.placeholder.com/400x400?text=Image+Not+available`
-                  }
-                  onClick={() => {
-                    navigate(`/detail/${item.id}`);
-                  }}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div
-          className="btn btn-primary buttonMore"
-          onClick={() => handleClick()}
-        >
-          View More
+        <div className="PageLayout">
+          <div className="listContent">
+            {movies.map((item) => {
+              return (
+                <div key={item.id}>
+                  <MoviesCard
+                    title={item.title}
+                    image={
+                      item.poster_path
+                        ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+                        : `https://via.placeholder.com/400x400?text=Image+Not+available`
+                    }
+                    onClick={() => {
+                      navigate(`/detail/${item.id}`);
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div
+            className="btn btn-primary buttonMore"
+            onClick={() => handleClick()}
+          >
+            View More
+          </div>
         </div>
       </>
     );
   } else {
-    result = <LoadSpin />;
+    result = <LoadSpin></LoadSpin>;
   }
 
-  return <div className="PageLayout">{result}</div>;
+  return <>{result}</>;
 };
 export default MoviesList;

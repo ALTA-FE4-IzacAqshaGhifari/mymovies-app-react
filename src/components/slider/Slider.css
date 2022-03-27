@@ -8,6 +8,15 @@
   font-size: 14px;
 }
 
+.SliderImage {
+  margin: auto;
+  width: auto;
+  height: 60vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .Slider {
   padding: 10px 10px;
 }
@@ -15,6 +24,14 @@
 .SliderCaption {
   padding-left: 10px;
   padding-bottom: 20px;
+  text-align: center;
+  height: 120px;
+}
+
+@media (max-width: 1000px) {
+  .SliderImage {
+    height: 40vh;
+  }
 }
 
 @media (max-width: 700px) {
@@ -23,14 +40,13 @@
     font-size: 10px;
   }
 
+  /* .SliderImage {
+    height: 400px;
+  } */
+
   .Slider {
     padding: 0 0;
-    border-radius: 0;
+    border-radius: 0 !important;
     /* height: 50vh; */
-  }
-
-  .isiSlider img {
-    height: 1000px;
-    width: auto;
   }
 }
