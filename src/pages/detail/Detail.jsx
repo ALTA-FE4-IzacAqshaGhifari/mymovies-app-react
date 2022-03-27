@@ -51,38 +51,46 @@ const Detail = () => {
             })`,
           }}
         >
-          <div className="containerDetail">
-            <div
-              className="posterDetail"
-              style={{
-                backgroundImage: `url(${
-                  detail.poster_path
-                    ? `https://image.tmdb.org/t/p/w500${detail.poster_path}`
-                    : `https://via.placeholder.com/400x400?text=Image+Not+available`
-                })`,
-              }}
-            ></div>
-            <div className="isiDetail">
-              <h1 className="detailTitle">{detail.title}</h1>
-              <div className="ratingBintang">
-                <h2>
-                  <i className="fa-solid fa-star"></i>{" "}
-                  {detail.vote_average ? detail.vote_average / 2 : "-"} / 5
-                </h2>
+          <section>
+            <div className="containerDetail">
+              <div
+                className="posterDetail"
+                style={{
+                  backgroundImage: `url(${
+                    detail.poster_path
+                      ? `https://image.tmdb.org/t/p/w500${detail.poster_path}`
+                      : `https://via.placeholder.com/400x400?text=Image+Not+available`
+                  })`,
+                }}
+              ></div>
+              <div className="isiDetail">
+                <h1 className="detailTitle">{detail.title}</h1>
+                <div className="ratingBintang">
+                  <h2>
+                    <i className="fa-solid fa-star"></i>{" "}
+                    {detail.vote_average ? detail.vote_average / 2 : "-"} / 5
+                  </h2>
+                </div>
+                <div className="containerGenre">
+                  {genres.map((item) => {
+                    return (
+                      <div key={item.id} className="genre">
+                        {item.name}
+                      </div>
+                    );
+                  })}
+                </div>
+                <p>release date: {detail.release_date}</p>
+                <p>{detail.overview}</p>
               </div>
-              <div className="containerGenre">
-                {genres.map((item) => {
-                  return (
-                    <div key={item.id} className="genre">
-                      {item.name}
-                    </div>
-                  );
-                })}
-              </div>
-              <p>release date: {detail.release_date}</p>
-              <p>{detail.overview}</p>
             </div>
-          </div>
+            <div
+              className="btn btn-primary buttonAddFavorite"
+              onClick={"not finished"}
+            >
+              Add to Favorite List{" "}
+            </div>
+          </section>
         </div>
         <Introduction text="Movies TRAILERS!!" />
         <VideoCard videos={videos} />
