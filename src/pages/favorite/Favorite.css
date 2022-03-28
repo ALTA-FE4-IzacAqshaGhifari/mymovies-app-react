@@ -1,0 +1,7 @@
+.FavoritePageContainer {
+  margin: 0 13vw;
+}
+
+.FavoriteCard {
+  box-shadow: inset 0 0 0 1000px rgba(60, 60, 60, 0.7);
+}

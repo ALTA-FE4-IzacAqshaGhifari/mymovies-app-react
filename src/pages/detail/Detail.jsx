@@ -86,9 +86,11 @@ const Detail = () => {
             </div>
             <div
               className="btn btn-primary buttonAddFavorite"
-              onClick={"not finished"}
+              onClick={() => {
+                console.log("clicked");
+              }}
             >
-              Add to Favorite List{" "}
+              Add to Favorite List
             </div>
           </section>
         </div>
