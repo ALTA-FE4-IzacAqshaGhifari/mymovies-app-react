@@ -1,7 +1,9 @@
 .FavoritePageContainer {
-  margin: 0 13vw;
+  margin: 0 5vw;
 }
 
-.FavoriteCard {
-  box-shadow: inset 0 0 0 1000px rgba(60, 60, 60, 0.7);
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }

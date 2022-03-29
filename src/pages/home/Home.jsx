@@ -45,7 +45,10 @@ export default function Home() {
             link="/movies-list"
           />
           <Title titleText={"Favorites"} />
-          <HomeCard konten="List of your Favorite Movies" link="/favorite" />
+          <HomeCard
+            konten="Collection of your Favorite Movies"
+            link="/favorite"
+          />
         </div>
       </>
     );

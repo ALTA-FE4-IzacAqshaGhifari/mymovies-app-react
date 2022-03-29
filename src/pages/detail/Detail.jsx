@@ -17,8 +17,12 @@ const Detail = () => {
   const [videos, setVideos] = useState([]);
   const [isReady, setIsReady] = useState(false);
 
+  const [storageDetail, setStorageDetail] = useState([]);
+  const [addFavorite, SetAddFavorite] = useState();
+
   useEffect(() => {
     fetchData();
+    setStorageDetail(JSON.parse(localStorage.getItem("detail")));
   }, []);
 
   const fetchData = async () => {
@@ -87,10 +91,22 @@ const Detail = () => {
             <div
               className="btn btn-primary buttonAddFavorite"
               onClick={() => {
-                console.log("clicked");
+                if (storageDetail == null) {
+                  localStorage.setItem("detail", JSON.stringify([detail]));
+                } else if (
+                  storageDetail.findIndex((object) => {
+                    return object.id === detail.id;
+                  }) === -1
+                ) {
+                  localStorage.setItem(
+                    "detail",
+                    JSON.stringify(storageDetail.concat(detail))
+                  );
+                }
+                // console.log(storageDetail.indexOf(detail));
               }}
             >
-              Add to Favorite List
+              Add to Favorite Collection
             </div>
           </section>
         </div>
