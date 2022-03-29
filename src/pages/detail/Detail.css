@@ -91,6 +91,12 @@
   box-shadow: 0px 3px 6px #03dbf3;
 }
 
+.AddedWarning {
+  color: red;
+  font-size: larger;
+  font-weight: bolder;
+}
+
 @media (max-width: 865px) {
   .containerDetail {
     flex-direction: column;

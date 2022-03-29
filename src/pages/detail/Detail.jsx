@@ -15,15 +15,15 @@ const Detail = () => {
   const [detail, setDetail] = useState({});
   const [genres, setGenres] = useState([]);
   const [videos, setVideos] = useState([]);
+  const [buttonTrigger, setButtonTrigger] = useState(true);
   const [isReady, setIsReady] = useState(false);
 
   const [storageDetail, setStorageDetail] = useState([]);
-  const [addFavorite, SetAddFavorite] = useState();
 
   useEffect(() => {
     fetchData();
     setStorageDetail(JSON.parse(localStorage.getItem("detail")));
-  }, []);
+  }, [buttonTrigger]);
 
   const fetchData = async () => {
     await axios
@@ -40,6 +40,10 @@ const Detail = () => {
       })
       .finally(() => setIsReady(true));
   };
+
+  const checkAvailability = storageDetail.findIndex((object) => {
+    return object.id === detail.id;
+  });
 
   let result;
   if (isReady) {
@@ -93,20 +97,21 @@ const Detail = () => {
               onClick={() => {
                 if (storageDetail == null) {
                   localStorage.setItem("detail", JSON.stringify([detail]));
-                } else if (
-                  storageDetail.findIndex((object) => {
-                    return object.id === detail.id;
-                  }) === -1
-                ) {
+                } else if (checkAvailability === -1) {
                   localStorage.setItem(
                     "detail",
                     JSON.stringify(storageDetail.concat(detail))
                   );
                 }
+                setButtonTrigger(!buttonTrigger);
                 // console.log(storageDetail.indexOf(detail));
               }}
             >
-              Add to Favorite Collection
+              {checkAvailability === -1 ? (
+                <span>Add to Favorite Collection</span>
+              ) : (
+                <span className="AddedWarning">Already in Collection</span>
+              )}
             </div>
           </section>
         </div>
