@@ -46,6 +46,7 @@ export default function Home() {
           />
           <Title titleText={"Favorites"} />
           <HomeCard
+            className="kartuTerbawah"
             konten="Collection of your Favorite Movies"
             link="/favorite"
           />

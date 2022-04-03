@@ -27,7 +27,6 @@ export default function FavoriteCard(props) {
               / 5
             </h2>
           </div>
-          <div className="GenreFavorite"></div>
           <p>release year: {dataDetail.release_date.slice(0, 4)}</p>
           <div
             className="btn btn-primary FavoriteCardButton"

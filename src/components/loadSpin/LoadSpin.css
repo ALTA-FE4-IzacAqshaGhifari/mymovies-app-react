@@ -1,9 +1,17 @@
 .spinnerScreen {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: grid;
   place-items: center;
+}
+
+.spinnerContainer {
   box-shadow: inset 0 0 0 1000px rgba(60, 60, 60, 0.7);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;
 }
 
 .spinner {
