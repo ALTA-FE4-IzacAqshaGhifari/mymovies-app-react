@@ -40,20 +40,24 @@ export default function Favorite() {
         <Introduction text="Your Favorite Movies Collection" />
         <div className="FavoritePageContainer">
           <div className="CardContainer">
-            {detail.map((item, index) => {
-              return (
-                <FavoriteCard
-                  key={index}
-                  detailFavorite={item}
-                  clickDetail={() => {
-                    navigate(`/detail/${item.id}`);
-                  }}
-                  clickRemove={() => {
-                    handleRemove(item.id);
-                  }}
-                />
-              );
-            })}
+            {detail !== -1 ? (
+              detail.map((item, index) => {
+                return (
+                  <FavoriteCard
+                    key={index}
+                    detailFavorite={item}
+                    clickDetail={() => {
+                      navigate(`/detail/${item.id}`);
+                    }}
+                    clickRemove={() => {
+                      handleRemove(item.id);
+                    }}
+                  />
+                );
+              })
+            ) : (
+              <div />
+            )}
           </div>
         </div>
       </>
