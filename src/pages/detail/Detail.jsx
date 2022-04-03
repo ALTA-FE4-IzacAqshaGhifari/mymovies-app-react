@@ -41,9 +41,12 @@ const Detail = () => {
       .finally(() => setIsReady(true));
   };
 
-  const checkAvailability = storageDetail.findIndex((object) => {
-    return object.id === detail.id;
-  });
+  const checkAvailability =
+    storageDetail !== -1
+      ? storageDetail.findIndex((object) => {
+          return object.id === detail.id;
+        })
+      : null;
 
   let result;
   if (isReady) {
@@ -104,7 +107,6 @@ const Detail = () => {
                   );
                 }
                 setButtonTrigger(!buttonTrigger);
-                // console.log(storageDetail.indexOf(detail));
               }}
             >
               {checkAvailability === -1 ? (
