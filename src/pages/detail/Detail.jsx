@@ -28,7 +28,7 @@ const Detail = () => {
   const fetchData = async () => {
     await axios
       .get(
-        `http://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`
+        `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`
       )
       .then((response) => {
         setDetail(response.data);
