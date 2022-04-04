@@ -22,7 +22,10 @@ const Detail = () => {
 
   useEffect(() => {
     fetchData();
-    setStorageDetail(JSON.parse(localStorage.getItem("detail")));
+    const fetching = JSON.parse(localStorage.getItem("detail"));
+    if (fetching) {
+      setStorageDetail(fetching);
+    }
   }, [buttonTrigger]);
 
   const fetchData = async () => {
@@ -106,7 +109,7 @@ const Detail = () => {
                 setButtonTrigger(!buttonTrigger);
               }}
             >
-              {checkAvailability === -1 ? (
+              {checkAvailability ? (
                 <span>Add to Favorite Collection</span>
               ) : (
                 <span className="AddedWarning">Already in Collection</span>
